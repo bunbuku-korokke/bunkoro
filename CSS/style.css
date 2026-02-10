@@ -1,0 +1,254 @@
+/* 全体の背景色を設定 */
+  /* body {
+  height: 100%;
+  margin: 0; 
+  padding: 0;
+  background: linear-gradient(to bottom, #0252ff, #ffffff);
+} */
+
+/* カッパさんのメッセージ */
+/* #wrapper {
+   display: flex;
+    gap: 8px; 
+    justify-content: center; 
+    margin-top: 20px; 
+    } 
+  */
+
+/* openingMsg ぶんぶくコロッケの公式ホームページです。 */
+/* #openingMsg { 
+    color: rgb(255, 255, 255); 
+    letter-spacing: 0.1em; 
+    font-family: "M PLUS Rounded 1c", sans-serif; 
+} */
+
+ /* #kpaMsg {
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+  color: rgb(255, 255, 255); 
+    letter-spacing: 0.1em; 
+    font-family: "M PLUS Rounded 1c", sans-serif; 
+ }
+
+ @keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+} */
+
+/* 表示切り替えのテスト⭐️⭐️ はじまり -> */
+#messageBox {
+  position: relative;
+  width: 300px;
+
+  /* 余白を最小限に */
+  margin: 25px auto 15px auto;; /* ← 20px → 5px に変更 */
+
+  /* 高さは固定しない方が自然 */
+  height: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.msg {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 3s ease;
+  white-space: nowrap;
+  color: white; /* ← 白文字にする */
+  font-weight: bold;
+}
+
+#message001,
+#message002 {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+/* 表示切り替えのテスト⭐️⭐️ おわり*/
+
+/* ナビゲーションの設定 */
+nav { 
+  background-color: #ffffffd4; /* 背景を白に */
+  margin-left: auto;
+  padding: 10px;
+ } 
+ nav ul { 
+  list-style: none;
+   margin: 0;
+   padding: 0;
+    display: flex;
+    justify-content: flex-end;
+     /* 横並び */
+      gap: 20px;
+     } 
+     nav li {
+      color: #003366; /*紺色っぽい文字色*/
+       /* color: white; */
+        cursor: pointer; 
+      } 
+
+/* タイトルのロゴ画像 */
+.pic {
+  width: 350px;
+  height: auto;
+  display: block;
+  margin: 20px auto 0; /* 上20px、左右auto、下0 */
+}
+
+/* ごあいさつの下の幅指定 */
+/* お知らせの下の幅指定 */
+
+.greeting h2,
+.info h2 {
+  text-align: center;
+    margin-top: 30px;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* ごあいさつの内容 */
+.greeting,
+.info {
+  /* text-align: center; */
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+
+
+.greeting-inner,
+.info-inner {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto; 
+  /* width: 100%; */
+  text-align: left;
+}
+
+.greeting-img {
+  width: 150px;
+  border-radius: 12px; /* ← 角丸の大きさを調整 */
+  border: 3px solid rgba(255,255,255,0.7); /* 白い枠線 */
+}
+
+.info-img {
+  width: 150px;
+  border-radius: 12px; /* ← 角丸の大きさを調整 */
+  border: 3px solid rgba(255,255,255,0.7); /* 白い枠線 */
+}
+
+.greeting ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+.info ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+.greeting ul li,
+.info ul li {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* リストの言語切り替えアニメーション ⭐️再挑戦*/
+.fade {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.fade.hide {
+  opacity: 0;
+  /* ここ試し⭐️⭐️ */
+  /* pointer-events: none; */
+}
+
+/* 選ばれているボタンに影をつける */
+nav button {
+  padding: 6px 12px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+  border-radius: 6px; /* ← ここで角を丸くする */
+}
+
+nav button.active {
+  background: #fff;
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+  font-weight: bold;
+}
+
+
+/* スマホ（600px以下）では縦並びに戻す */
+@media (max-width: 600px) {
+  .greeting-inner {
+    display: block;
+    text-align: center; /* ★ これを追加 → 箇条書きも中央寄せに */
+  }
+
+    .info-inner {
+    display: block;
+    text-align: center; /* ★ これを追加 → 箇条書きも中央寄せに */
+  }
+
+  .greeting-img {
+    display: block;
+    margin: 0 auto 15px;
+    width: 60%;
+    max-width: 250px;
+  }
+
+  .info-img {
+    display: block;
+    margin: 0 auto 15px;
+    width: 60%;
+    max-width: 250px;
+  }
+
+  .greeting ul {
+    padding-left: 0; /* 念のため左余白も消す */
+    display: inline-block; /* ★ 箇条書きの幅を画像と揃えやすくする */
+    text-align: center;      /* ★ 箇条書きの中身は左揃えのまま center で中央寄せ*/
+    font-size: 16px; /* ← 好きなサイズに調整 */
+  }
+  .info ul {
+    padding-left: 0; /* 念のため左余白も消す */
+    display: inline-block; /* ★ 箇条書きの幅を画像と揃えやすくする */
+    text-align: left;      /* ★ 箇条書きの中身は左揃えのまま center で中央寄せ*/
+    font-size: 16px; /* ← 好きなサイズに調整 */
+  }
+}
+
+.info-link {
+  text-decoration: none;
+  color: inherit; /* 必要なら文字色も継承 */
+}
+.info-link:hover {
+  opacity: 0.7;
+}
+
+/* フッターの設定 */
+.site-footer {
+  /* background-color: #8B4513; 茶色 */
+  background-color: #4B2E1A; /* 焦茶っぽい色 */
+  color: #fff;               /* 文字色は白 */
+  text-align: center;        /* 中央寄せ */
+  padding: 20px 0;           /* 上下に余白 */
+  margin-top: 40px;          /* 本文との間に余白 */
+  font-size: 14px;
+}
+
+
+
+
