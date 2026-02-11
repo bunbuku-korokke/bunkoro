@@ -2,6 +2,7 @@
 #messageBox {
   position: relative;
   width: 300px;
+  min-height: 40px; /* ← 必ず高さを確保 */
 
   /* 余白を最小限に */
   margin: 25px auto 15px auto;; /* ← 20px → 5px に変更 */
